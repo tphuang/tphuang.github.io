@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-09-27T14:46:29.349Z</updated>
+  <updated>2014-09-27T16:22:40.751Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -92,7 +92,7 @@
     <link href="http://yoursite.com/2014/09/21/Spring-MVC-Hiberante%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2014/09/21/Spring-MVC-Hiberante环境搭建/</id>
     <published>2014-09-21T11:02:39.000Z</published>
-    <updated>2014-09-21T12:57:20.000Z</updated>
+    <updated>2014-09-27T16:22:25.000Z</updated>
     <content type="html"><![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。</p>
 <h3 id="一、添加相应的架包">一、添加相应的架包</h3>
 <p>我的项目是采用Gradle进行管理的，具体架包主要应包括:</p>
@@ -233,7 +233,7 @@ hibernate.<span class="variable">format_sql=</span><span class="constant">true</
     <![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。<]]>
     </summary>
     
-      <category term="Spring Hibernate JDBC" scheme="http://yoursite.com/tags/Spring-Hibernate-JDBC/"/>
+      <category term="Hibernate" scheme="http://yoursite.com/tags/Hibernate/"/>
     
       <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
     
