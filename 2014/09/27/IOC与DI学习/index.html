@@ -79,7 +79,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-09-27T12:39:46.000Z" itemprop="datePublished">9月 27 2014</time>
-    更新日期:<time datetime="2014-09-27T16:34:04.000Z" itemprop="dateModified">9月 28 2014</time>
+    更新日期:<time datetime="2014-09-28T06:50:02.000Z" itemprop="dateModified">9月 28 2014</time>
     
   </p>
 </header>
@@ -109,15 +109,15 @@
 }
 </code></pre><p>AnimalAction类如下：</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> AnimalAction {
-    <span class="keyword">private</span> Animal animal;
+    <span class="keyword">private</span> Cat cat;
 
     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {
-        animal.sayHello();
+        cat.sayHello();
     }
 
     <span class="comment">//依赖注入时必须的setter方法</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAnimal</span>(Animal animal) {
-        <span class="keyword">this</span>.animal = animal;
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCat</span>(Cat cat) {
+        <span class="keyword">this</span>.cat = cat;
     }
 }
 </code></pre><p>Spring-beans.xml配置如下：</p>
@@ -220,7 +220,7 @@
 		
 			<li><a href="/tags/spring/" title="spring">spring<sup>1</sup></a></li>
 		
-			<li><a href="/tags/工作总结/" title="工作总结">工作总结<sup>1</sup></a></li>
+			<li><a href="/tags/工作总结-ThoughtWorks/" title="工作总结 ThoughtWorks">工作总结 ThoughtWorks<sup>1</sup></a></li>
 		
 		</ul>
 </div>
@@ -230,7 +230,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Hibernate/" style="font-size: NaNpx;">Hibernate</a><a href="/tags/spring/" style="font-size: NaNpx;">spring</a><a href="/tags/工作总结/" style="font-size: NaNpx;">工作总结</a>
+       <a href="/tags/Hibernate/" style="font-size: NaNpx;">Hibernate</a><a href="/tags/spring/" style="font-size: NaNpx;">spring</a><a href="/tags/工作总结-ThoughtWorks/" style="font-size: NaNpx;">工作总结 ThoughtWorks</a>
     </div>
   </div>
 
