@@ -79,7 +79,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-09-27T12:39:46.000Z" itemprop="datePublished">9月 27 2014</time>
-    更新日期:<time datetime="2014-09-28T06:50:02.000Z" itemprop="dateModified">9月 28 2014</time>
+    更新日期:<time datetime="2014-09-28T08:27:40.000Z" itemprop="dateModified">9月 28 2014</time>
     
   </p>
 </header>
@@ -95,60 +95,26 @@
 <h3 id="1-_setter注入">1. setter注入</h3>
 <p>首先有个类叫Cat，有个AnimalAction的逻辑类。</p>
 <p>Cat类如下：</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> Cat {
-    <span class="keyword">private</span> String msg;
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>{</div><div class="line">    <span class="keyword">private</span> String msg;</div><div class="line"></div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span>(String msg){</div><div class="line">        <span class="keyword">this</span>.msg = msg;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(){</div><div class="line">        System.out.println(msg + <span class="string">"，喵~喵~"</span>);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
-    <span class="comment">//依赖注入时必须的setter方法</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span>(String msg){
-        <span class="keyword">this</span>.msg = msg;
-    }
+<p>AnimalAction类如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalAction</span> </span>{</div><div class="line">    <span class="keyword">private</span> Cat cat;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {</div><div class="line">        cat.sayHello();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCat</span>(Cat cat) {</div><div class="line">        <span class="keyword">this</span>.cat = cat;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(){
-        System.<span class="keyword">out</span>.println(msg + <span class="string">"，喵~喵~"</span>);
-    }
-}
-</code></pre><p>AnimalAction类如下：</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> AnimalAction {
-    <span class="keyword">private</span> Cat cat;
+<p>Spring-beans.xml配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"cat"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"cat"</span> <span class="attribute">ref</span>=<span class="value">"cat"</span>&gt;</span><span class="tag">&lt;/<span class="title">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
 
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {
-        cat.sayHello();
-    }
-
-    <span class="comment">//依赖注入时必须的setter方法</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCat</span>(Cat cat) {
-        <span class="keyword">this</span>.cat = cat;
-    }
-}
-</code></pre><p>Spring-beans.xml配置如下：</p>
-<pre><code>&lt;beans&gt;
-    &lt;bean id=<span class="string">"cat"</span> class=<span class="string">"com.tw.hello.spring.Cat"</span>&gt;
-        &lt;property name=<span class="string">"msg"</span> value=<span class="string">"猫猫"</span> /&gt;
-    &lt;/bean&gt;
-
-    &lt;bean id=<span class="string">"animalAction"</span> class=<span class="string">"com.tw.hello.spring.AnimalAction"</span>&gt;
-        &lt;property name=<span class="string">"cat"</span> <span class="keyword">ref</span>=<span class="string">"cat"</span>&gt;&lt;/property&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;
-</code></pre><h3 id="2-_构造器注入">2. 构造器注入</h3>
+<h3 id="2-_构造器注入">2. 构造器注入</h3>
 <p>构造器注入的话，必须要在AnimalAction中加入有参构造方法。</p>
 <p>Spring-beans.xml配置如下：</p>
-<pre><code> &lt;beans&gt;
-        &lt;bean id=<span class="string">"cat"</span> class=<span class="string">"com.tw.hello.spring.Cat"</span>&gt;
-            &lt;property name=<span class="string">"msg"</span> value=<span class="string">"猫猫"</span> /&gt;
-        &lt;/bean&gt;
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"cat"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">constructor-arg</span> <span class="attribute">index</span>=<span class="value">"0"</span> <span class="attribute">ref</span>=<span class="value">"cat"</span>&gt;</span><span class="tag">&lt;/<span class="title">constructor-arg</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
 
-        &lt;bean id=<span class="string">"animalAction"</span> class=<span class="string">"com.tw.hello.spring.AnimalAction"</span>&gt;
-            &lt;constructor-arg index=<span class="string">"0"</span> <span class="keyword">ref</span>=<span class="string">"cat"</span>&gt;&lt;/constructor-arg&gt;
-        &lt;/bean&gt;
- &lt;/beans&gt;
-</code></pre><h3 id="3-_接口注入">3. 接口注入</h3>
+<h3 id="3-_接口注入">3. 接口注入</h3>
 <h3 id="4-_静态工厂注入">4. 静态工厂注入</h3>
 <h3 id="5-_Annotation方式">5. Annotation方式</h3>
 <p>主要是用@Component和@Autowired来代替bean配置，只需要在入口XML文件中加入以下，便可以自动扫描注解。</p>
-<pre><code>&lt;<span class="keyword">context</span>:<span class="keyword">component</span>-scan base-<span class="keyword">package</span>=<span class="string">"com.thoughtworks.bookshelf"</span>/&gt;
-&lt;<span class="keyword">context</span>:annotation-config/&gt;
-</code></pre><p>其本质还是setter注入和构造器注入两种方式，如果在AnimalAction中，@Autowired放在字段上，就是setter注入；如果@Autowired放在构造方法上，则是构造器方式注入。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">context:component-scan</span> <span class="attribute">base-package</span>=<span class="value">"com.thoughtworks.bookshelf"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">context:annotation-config</span>/&gt;</span></div></pre></td></tr></table></figure>
+
+<p>其本质还是setter注入和构造器注入两种方式，如果在AnimalAction中，@Autowired放在字段上，就是setter注入；如果@Autowired放在构造方法上，则是构造器方式注入。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
