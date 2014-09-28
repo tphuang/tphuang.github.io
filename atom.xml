@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-09-28T09:34:47.860Z</updated>
+  <updated>2014-09-28T17:11:56.720Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,29 +16,38 @@
   
   <entry>
     <title><![CDATA[IoC与DI学习]]></title>
-    <link href="http://yoursite.com/2014/09/27/IOC%E4%B8%8EDI%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2014/09/27/IOC与DI学习/</id>
+    <link href="http://yoursite.com/2014/09/27/IoC-vs-DI/"/>
+    <id>http://yoursite.com/2014/09/27/IoC-vs-DI/</id>
     <published>2014-09-27T12:39:46.000Z</published>
-    <updated>2014-09-28T08:27:40.000Z</updated>
-    <content type="html"><![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则。DI是IoC典型的实现。IoC与DI的关系就好比Java中的”接口”和”接口的实现类”的关系一样。目前有四种DI实现：setter注入、构造器注入、接口注入和静态工厂注入，其中后两种应用较少。</p>
+    <updated>2014-09-28T17:10:40.000Z</updated>
+    <content type="html"><![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的实现。<br>IoC与DI的关系就好比Java中的”接口”和”接口的实现类”的关系一样。目前有四种DI实现：setter注入、构造器注入、接口注入和静态工厂注入，其中后两种应用较少。</p>
 <h3 id="1-_setter注入">1. setter注入</h3>
-<p>首先有个类叫Cat，有个AnimalAction的逻辑类。</p>
+<p>首先有个接口是Animal, Cat是Animal的实现类，有个AnimalAction的逻辑类。</p>
 <p>Cat类如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>{</div><div class="line">    <span class="keyword">private</span> String msg;</div><div class="line"></div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span>(String msg){</div><div class="line">        <span class="keyword">this</span>.msg = msg;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(){</div><div class="line">        System.out.println(msg + <span class="string">"，喵~喵~"</span>);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Animal</span> </span>{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>();</div><div class="line">    <span class="keyword">void</span> setMsg(String msg);</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">implements</span> <span class="title">Animal</span> </span>{</div><div class="line">    <span class="keyword">private</span> String msg;</div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span>(String msg){</div><div class="line">        <span class="keyword">this</span>.msg = msg;</div><div class="line">    }</div><div class="line">    <span class="annotation">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(){</div><div class="line">        System.out.println(msg + <span class="string">"，喵~喵~"</span>);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>AnimalAction类如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalAction</span> </span>{</div><div class="line">    <span class="keyword">private</span> Cat cat;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {</div><div class="line">        cat.sayHello();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCat</span>(Cat cat) {</div><div class="line">        <span class="keyword">this</span>.cat = cat;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalAction</span> </span>{</div><div class="line">    <span class="keyword">private</span> Animal animal;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {</div><div class="line">        animal.sayHello();</div><div class="line">    }</div><div class="line">    <span class="comment">//setter注入时需要</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAnimal</span>(Animal animal) {</div><div class="line">        <span class="keyword">this</span>.animal = animal;</div><div class="line">    }</div><div class="line">    <span class="comment">//构造器注入时需要</span></div><div class="line">    <span class="keyword">public</span> <span class="title">AnimalAction</span>(Animal animal) {</div><div class="line">        <span class="keyword">this</span>.animal = animal;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>Spring-beans.xml配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"cat"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"cat"</span> <span class="attribute">ref</span>=<span class="value">"cat"</span>&gt;</span><span class="tag">&lt;/<span class="title">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animal"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"animal"</span> <span class="attribute">ref</span>=<span class="value">"animal"</span>&gt;</span><span class="tag">&lt;/<span class="title">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <h3 id="2-_构造器注入">2. 构造器注入</h3>
 <p>构造器注入的话，必须要在AnimalAction中加入有参构造方法。</p>
 <p>Spring-beans.xml配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"cat"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">constructor-arg</span> <span class="attribute">index</span>=<span class="value">"0"</span> <span class="attribute">ref</span>=<span class="value">"cat"</span>&gt;</span><span class="tag">&lt;/<span class="title">constructor-arg</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">beans</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animal"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.Cat"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"msg"</span> <span class="attribute">value</span>=<span class="value">"猫猫"</span> /&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">bean</span> <span class="attribute">id</span>=<span class="value">"animalAction"</span> <span class="attribute">class</span>=<span class="value">"com.tw.hello.spring.AnimalAction"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="title">constructor-arg</span> <span class="attribute">index</span>=<span class="value">"0"</span> <span class="attribute">ref</span>=<span class="value">"animal"</span>&gt;</span><span class="tag">&lt;/<span class="title">constructor-arg</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">beans</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <h3 id="3-_接口注入">3. 接口注入</h3>
+<p>在AnimalAction类中加入如下代码，并注释原来的setter注入和构造器注入方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//接口注入</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">animalSayHello</span>() {</div><div class="line">    <span class="keyword">try</span> {</div><div class="line">        animal = (Animal) Class.forName(<span class="string">"com.tw.hello.spring.Cat"</span>).newInstance();</div><div class="line">        animal.sayHello();</div><div class="line">    } <span class="keyword">catch</span> (Exception e) {</div><div class="line">        e.printStackTrace();</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
 <h3 id="4-_静态工厂注入">4. 静态工厂注入</h3>
+<p>此时我们再添加一个Anima的实现类Dog，类似于Cat</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">implements</span> <span class="title">Animal</span> </span>{</div><div class="line">    <span class="keyword">private</span> String msg;</div><div class="line">    <span class="comment">//依赖注入时必须的setter方法</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMsg</span>(String msg){</div><div class="line">        <span class="keyword">this</span>.msg = msg;</div><div class="line">    }</div><div class="line">    <span class="annotation">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(){</div><div class="line">        System.out.println(msg + <span class="string">"，旺~旺~"</span>);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>再添加AnimalFactory工厂，用于静态注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalFactory</span> </span>{</div><div class="line"><span class="comment">//    静态工厂设计模式</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Animal <span class="title">getAnimal</span>(String type) {</div><div class="line">        <span class="keyword">if</span> (<span class="string">"cat"</span>.equalsIgnoreCase(type)) {</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Cat();</div><div class="line">        } <span class="keyword">else</span> {</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Dog();</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
 <h3 id="5-_Annotation方式">5. Annotation方式</h3>
 <p>主要是用@Component和@Autowired来代替bean配置，只需要在入口XML文件中加入以下，便可以自动扫描注解。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">context:component-scan</span> <span class="attribute">base-package</span>=<span class="value">"com.thoughtworks.bookshelf"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">context:annotation-config</span>/&gt;</span></div></pre></td></tr></table></figure>
@@ -46,19 +55,23 @@
 <p>其本质还是setter注入和构造器注入两种方式，如果在AnimalAction中，@Autowired放在字段上，就是setter注入；如果@Autowired放在构造方法上，则是构造器方式注入。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则。DI是IoC典型的]]>
+    <![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的]]>
     </summary>
     
-      <category term="spring" scheme="http://yoursite.com/tags/spring/"/>
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+      <category term="IoC" scheme="http://yoursite.com/tags/IoC/"/>
+    
+      <category term="DI" scheme="http://yoursite.com/tags/DI/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Spring MVC+Hiberante环境搭建]]></title>
-    <link href="http://yoursite.com/2014/09/21/Spring-MVC-Hiberante%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2014/09/21/Spring-MVC-Hiberante环境搭建/</id>
+    <link href="http://yoursite.com/2014/09/21/Spring-MVC-Hiberante-set-up/"/>
+    <id>http://yoursite.com/2014/09/21/Spring-MVC-Hiberante-set-up/</id>
     <published>2014-09-21T11:02:39.000Z</published>
-    <updated>2014-09-27T16:22:25.000Z</updated>
+    <updated>2014-09-28T17:08:46.000Z</updated>
     <content type="html"><![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。</p>
 <h3 id="一、添加相应的架包">一、添加相应的架包</h3>
 <p>我的项目是采用Gradle进行管理的，具体架包主要应包括:</p>
@@ -201,16 +214,22 @@ hibernate.<span class="variable">format_sql=</span><span class="constant">true</
     
       <category term="Hibernate" scheme="http://yoursite.com/tags/Hibernate/"/>
     
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+      <category term="Spring MVC" scheme="http://yoursite.com/tags/Spring-MVC/"/>
+    
+      <category term="ORM" scheme="http://yoursite.com/tags/ORM/"/>
+    
       <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[终于有了个自建的博客了]]></title>
-    <link href="http://yoursite.com/2014/09/21/%E7%BB%88%E4%BA%8E%E6%9C%89%E4%BA%86%E4%B8%AA%E8%87%AA%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BA%86/"/>
-    <id>http://yoursite.com/2014/09/21/终于有了个自建的博客了/</id>
+    <link href="http://yoursite.com/2014/09/21/my-first-blog-build-by-myslef/"/>
+    <id>http://yoursite.com/2014/09/21/my-first-blog-build-by-myslef/</id>
     <published>2014-09-21T07:11:15.000Z</published>
-    <updated>2014-09-27T14:27:07.000Z</updated>
+    <updated>2014-09-28T17:10:55.000Z</updated>
     <content type="html"><![CDATA[<p>终于有了一个自建的博客，在此留下足迹，以作纪念。</p>
 <p>这儿要感谢我的同事<a href="http://toozhao.com/" title="峻伟博客" target="_blank" rel="external">峻伟</a>，是他让我知道了<strong><em>Hexo</em></strong>的存在，也是他的督促让我有了这个博客的诞生；同时还要感谢<a href="http://zipperary.com/categories/hexo/" title="Zipper博客" target="_blank" rel="external">Zipper</a>, 虽然不认识他，但他的关于Hexo系列博客帮助我一步步搭建起了该博客。<br></p>
 <p>仔细看了下俊伟的博客，居然有2006年的博客，天啦，他高一就开始写博客了，细细想来那会儿我刚接触网络，还是从申请QQ开始的，那会儿就会聊QQ，简单的看看网页。我算了算他的年龄，好像比我还小哎，哎呀真不敢比啊。Anyway，他就是我的目标啦，现目前我有三件大事：学技术、练英语、写博客。</p>
@@ -229,14 +248,18 @@ hibernate.<span class="variable">format_sql=</span><span class="constant">true</
 <p>这儿要感谢我的同事<a href="http://toozhao.com/" title="峻伟博客" target="_blank" rel="external">峻伟</a>，是他让我知道了<strong>]]>
     </summary>
     
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Writing" scheme="http://yoursite.com/tags/Writing/"/>
+    
   </entry>
   
   <entry>
     <title><![CDATA[九月第2周工作学习总结]]></title>
-    <link href="http://yoursite.com/2014/09/21/%E4%B9%9D%E6%9C%88%E7%AC%AC2%E5%91%A8%E5%B7%A5%E4%BD%9C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2014/09/21/九月第2周工作学习总结/</id>
+    <link href="http://yoursite.com/2014/09/21/summary-for-work-and-study-in-September/"/>
+    <id>http://yoursite.com/2014/09/21/summary-for-work-and-study-in-September/</id>
     <published>2014-09-21T05:04:47.000Z</published>
-    <updated>2014-09-21T12:52:31.000Z</updated>
+    <updated>2014-09-28T17:10:07.000Z</updated>
     <content type="html"><![CDATA[<p>一直很佩服坚持写博客，坚持做一件事的人，发现自己现在真的越来越缺乏耐心了，很多时候都比较急功近利。</p>
 <p>写博客在我看来，现目前主要功用是一段时间学习的总结和整理，同时也是自己一点点进步的最好凭证。这种输出方式，可以更好地驱动自己定期整理和总结所思所学，同时这些记录下来的点滴和进步也会让自己产生成就感，驱动自己更多学习和更大进步。</p>
 <p>大多时候喜欢将感兴趣和重要的东西放在有道笔记中，觉得这种方式更随意些，但就是缺乏阶段性的总结和整理，使得笔记有些乱了。所以这个博客就暂时定为每周一次，作为一周学习、工作的整理吧。</p>
@@ -257,7 +280,9 @@ hibernate.<span class="variable">format_sql=</span><span class="constant">true</
 <p>写博客在我看来，现目前主要功用是一段时间学习的总结和整理，同时也是自己一点点进步的最好凭证。这种输出方式，可以更好地驱动自己定期整理和总结所思所学，同时这些记录]]>
     </summary>
     
-      <category term="工作总结 ThoughtWorks" scheme="http://yoursite.com/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93-ThoughtWorks/"/>
+      <category term="工作总结" scheme="http://yoursite.com/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="ThoughtWorks" scheme="http://yoursite.com/tags/ThoughtWorks/"/>
     
       <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
     
