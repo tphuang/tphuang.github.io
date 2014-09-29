@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-09-28T17:11:56.720Z</updated>
+  <updated>2014-09-29T09:45:28.724Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2014/09/27/IoC-vs-DI/"/>
     <id>http://yoursite.com/2014/09/27/IoC-vs-DI/</id>
     <published>2014-09-27T12:39:46.000Z</published>
-    <updated>2014-09-28T17:10:40.000Z</updated>
+    <updated>2014-09-29T09:45:07.000Z</updated>
     <content type="html"><![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的实现。<br>IoC与DI的关系就好比Java中的”接口”和”接口的实现类”的关系一样。目前有四种DI实现：setter注入、构造器注入、接口注入和静态工厂注入，其中后两种应用较少。</p>
 <h3 id="1-_setter注入">1. setter注入</h3>
 <p>首先有个接口是Animal, Cat是Animal的实现类，有个AnimalAction的逻辑类。</p>
