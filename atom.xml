@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-10-07T16:56:01.352Z</updated>
+  <updated>2014-10-07T16:59:38.602Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -38,7 +38,7 @@
     <link href="http://yoursite.com/2014/10/07/maven-learning/"/>
     <id>http://yoursite.com/2014/10/07/maven-learning/</id>
     <published>2014-10-07T15:24:04.000Z</published>
-    <updated>2014-10-07T16:55:51.000Z</updated>
+    <updated>2014-10-07T16:58:55.000Z</updated>
     <content type="html"><![CDATA[<h3 id="一-_Maven简介">一. Maven简介</h3>
 <p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件 (plugin)目标(goal)的逻辑。</p>
 <p><em>推荐书籍：</em> 目前中文版对maven介绍比较全的书籍是<a href="http://pan.baidu.com/wap/link?uk=3761431046&amp;shareid=932733601&amp;third=4" target="_blank" rel="external">《Maven实战》</a></p>
@@ -84,7 +84,7 @@
 <h4 id="6-Maven_Profiles">6.Maven Profiles</h4>
 <p>Profiles是maven的一个很关键的术语：profile是用来定义一些在build lifecycle中使用的environmental variations，profile可以设置成在不同的环境下激活不同的profile（例如：不同的OS激活不同的profile，不同的JVM激活不同的profile，不同的dabase激活不同的profile，不同的开发环境如Dev、QA、CI、Staging、Production等等）。<br>    使用：当使用Maven命令打包的时候要指定你要使用哪一个profiles id来装配你的项目，命令如下mvn clean package -P development ，其中-p是指启用哪一个profiles id.具体参见三. Maven管理单元测试与功能测试</p>
 <h3 id="三-_Maven管理单元测试和集成测试">三. Maven管理单元测试和集成测试</h3>
-<p>将会在下一篇博客中提到，详见：[Maven分离单元测试和集成测试]</p>
+<p>将会在下一篇博客中提到，详见：<a href="/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/">Maven分离单元测试和集成测试</a></p>
 <h3 id="四-_Maven常用命令">四. Maven常用命令</h3>
 <ol>
 <li>编译源代码： mvn compile </li>
