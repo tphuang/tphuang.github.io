@@ -1,0 +1,442 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Maven 学习 | Robin&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Robin">
+    
+    <meta name="description" content="一. Maven简介
+Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Robin&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Robin&#39;s Blog" title="Robin&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Robin&#39;s Blog">Robin&#39;s Blog</a></h1>
+				<h2 class="blog-motto">What pains us trains us</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/07/maven-learning/" title="Maven 学习" itemprop="url">Maven 学习</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Robin">Robin</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-10-07T15:24:04.000Z" itemprop="datePublished">10月 7 2014</time>
+    更新日期:<time datetime="2014-10-07T16:44:40.000Z" itemprop="dateModified">10月 8 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试与功能测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试与功能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
+		</div>
+		
+		<h3 id="一-_Maven简介">一. Maven简介</h3>
+<p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件 (plugin)目标(goal)的逻辑。</p>
+<p><em>推荐书籍：</em> 目前中文版对maven介绍比较全的书籍是<a href="http://pan.baidu.com/wap/link?uk=3761431046&amp;shareid=932733601&amp;third=4" target="_blank" rel="external">《Maven实战》</a></p>
+<h3 id="二-_核心概念">二. 核心概念</h3>
+<ul>
+<li>POM (Project Object Model)</li>
+<li>Maven 插件</li>
+<li>Maven 生命周期</li>
+<li>Maven 依赖管理</li>
+<li>Maven 库</li>
+<li>Maven Profiles</li>
+</ul>
+<h4 id="1-POM">1.POM</h4>
+<p>一般，maven 的 archetype 插件建立了一个工程目录，其中有一个 Project Object Model(POM) 文件 pom.xml 。这个文件用于描述项目，配置插件和管理依赖关系。    </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">project</span>&gt;</span></div><div class="line">#该项目的坐标，其他项目可根据这个标识找到</div><div class="line"><span class="tag">&lt;<span class="title">groupId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">dependencies</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">dependency</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="title">version</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="title">scope</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;/<span class="title">dependency</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="title">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">build</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">plugins</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">plugin</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">           	<span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">           	<span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="title">plugin</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">build</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">project</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h4 id="2-Maven_插件">2.Maven 插件</h4>
+<p>当我们刚开始构建项目时，可以用<code>mvn archetype:generate</code> 命令来生成一个项目。那么这里的 <code>archetype:generate</code> 是什么意思呢？archetype 是一个插件的名字，generate是目标(goal)的名字。这个命令的意思是告诉 maven 执行 archetype 插件的 generate 目标。</p>
+<p>一个目标是一个工作单元，而插件则是一个或者多个目标的集合。比如说Jar插件，Compiler插件，Surefire插件等。从看名字就能知道，Jar 插件包含建立Jar文件的目标， Compiler 插件包含编译源代码和单元测试代码的目标。Surefire 插件的话，则是运行单元测试。</p>
+<p>所以，其实mvn 本身不会做太多的事情，它不知道怎么样编译或者怎么样打包。它把构建的任务交给插件去做。插件定义了常用的构建逻辑，并且能够被重复利用。</p>
+<h4 id="3-Maven_生命周期">3.Maven 生命周期</h4>
+<p>项目中，我们经常用到mvn install或者mvn test等等，这些命令就是Maven对构建(build)的过程进行了抽象和定义，这个过程被称为构建的生命周期（<strong>lifecycle</strong>）。生命周期由多个阶段(phase)组成,每个阶段(phase)会挂接一到多个goal。goal是maven里定义任务的最小单元，相当于ant里的target。</p>
+<p>如果你没有对它进行任何的插件配置或者定制的话，那么mvn deploy 会依次执行默认生命周期中包括编译，测试，打包，部署阶段。<br>生命周期更多内容，请参考<a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html" target="_blank" rel="external">Introduction to the Build Lifecycle</a>，常见的生命周期如下：</p>
+<ul>
+<li>process-resources     #复制并处理资源文件，至目标目录，准备打包。</li>
+<li>compile       #编译项目的源代码。</li>
+<li>test          #使用合适的单元测试框架运行测试。</li>
+<li>package      #接受编译好的代码，打包成可发布的格式，如 JAR。</li>
+<li>install      #将包安装至本地仓库，以让其它项目依赖。</li>
+<li>deploy       #将最终的包复制到远程的仓库，以让其它开发人员与项目共享</li>
+</ul>
+<h4 id="4-Maven_依赖管理">4.Maven 依赖管理</h4>
+<p>maven 坐标能够确定一个项目。换句话说，我们可以用它来解决依赖关系。在 POM 中，依赖关系是在 dependencies 部分中定义的。<br>如例子中maven 不但会下载junit-4.11.jar，还下载了它的 POM 文件。这样 maven 就能检查 junit 的依赖关系，把它所需要的依赖也包括进来。</p>
+<p>在 POM 的 dependencies 部分中，scope 决定了依赖关系的适用范围。我们的例子中 junit 的 scope 是 test，那么它只会在执行 compiler:testCompile and surefire:test 目标的时候才会被加到 classpath 中，在执行 compiler:compile 目标时是拿不到 junit 的。常见的scope如下：</p>
+<ol>
+<li>compile ，缺省值，适用于所有阶段，会随着项目一起发布。</li>
+<li>provided ，类似 compile ，期望 JDK 、容器或使用者会提供这个依赖。如servlet.jar 。</li>
+<li>runtime ，只在运行时使用，如 JDBC 驱动，适用运行和测试阶段。</li>
+<li>test ，只在测试时使用，用于编译和运行测试代码。不会随项目发布。</li>
+</ol>
+<h4 id="5-Maven_库">5.Maven 库</h4>
+<p>当第一次运行 maven 命令的时候，你需要 Internet 连接，因为它要从网上下载一些文件。那么它从哪里下载呢？它是从 maven 默认的远程库(<a href="http://repo1.maven.org/maven2" target="_blank" rel="external">http://repo1.maven.org/maven2</a>) 下载的。这个远程库有 maven 的核心插件和可供下载的 jar 文件。同时我们可以通过<a href="http://search.maven.org/" target="_blank" rel="external">Maven Repository</a>或者<a href="http://mvnrepository.com/" target="_blank" rel="external">MVN Repository</a>找到想要的架包和插件。<br>本地库是指 maven 下载了插件或者 jar 文件后存放在本地机器上的拷贝。在 Linux 上，它的位置在 ~/.m2/repository，在 Windows XP 上，在 C:\Documents and Settings\username.m2\repository ，在 Windows 7 上，在 C:\Users\username.m2\repository。当 maven 查找需要的 jar 文件时，它会先在本地库中寻找，只有在找不到的情况下，才会去远程库中找。</p>
+<h4 id="6-Maven_Profiles">6.Maven Profiles</h4>
+<p>Profiles是maven的一个很关键的术语：profile是用来定义一些在build lifecycle中使用的environmental variations，profile可以设置成在不同的环境下激活不同的profile（例如：不同的OS激活不同的profile，不同的JVM激活不同的profile，不同的dabase激活不同的profile，不同的开发环境如Dev、QA、CI、Staging、Production等等）。<br>    使用：当使用Maven命令打包的时候要指定你要使用哪一个profiles id来装配你的项目，命令如下mvn clean package -P development ，其中-p是指启用哪一个profiles id.具体参见三. Maven管理单元测试与功能测试</p>
+<h3 id="三-_Maven管理单元测试与功能测试">三. Maven管理单元测试与功能测试</h3>
+<h3 id="四-_Maven常用命令">四. Maven常用命令</h3>
+<ol>
+<li>编译源代码： mvn compile </li>
+<li>编译测试代码：mvn test-compile    </li>
+<li>运行测试：mvn test   </li>
+<li>产生site：mvn site   </li>
+<li>打包：mvn package   </li>
+<li>在本地Repository中安装jar：mvn install </li>
+<li>清除产生的项目：mvn clean   </li>
+<li>生成eclipse项目：mvn eclipse:eclipse  </li>
+<li>生成idea项目：mvn idea:idea  </li>
+<li>组合使用goal命令，如只打包不测试：mvn -Dtest package   </li>
+<li>编译测试的内容：mvn test-compile  </li>
+<li>只打jar包: mvn jar:jar  </li>
+<li>只测试而不编译，也不测试编译：mvn test -skipping compile -skipping test-compile<br>  ( -skipping 的灵活运用，当然也可以用于其他组合命令)  </li>
+<li>清除eclipse的一些系统设置:mvn eclipse:clean</li>
+<li>查看架包依赖关系：mvn dependency:tree   </li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Maven/">Maven</a><a href="/tags/cucumber/">cucumber</a><a href="/tags/profile/">profile</a><a href="/tags/lifestyle/">lifestyle</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2014/10/07/maven-learning/" data-title="Maven 学习 | Robin&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/09/27/IoC-vs-DI/"  title="IoC与DI学习">
+ <strong>NEXT:</strong><br/> 
+ <span>IoC与DI学习
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试与功能测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试与功能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/blog/" title="blog">blog<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/DI/" title="DI">DI<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hibernate/" title="Hibernate">Hibernate<sup>1</sup></a></li>
+		
+			<li><a href="/tags/IoC/" title="IoC">IoC<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Maven/" title="Maven">Maven<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Spring/" title="Spring">Spring<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Spring-MVC/" title="Spring MVC">Spring MVC<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ThoughtWorks/" title="ThoughtWorks">ThoughtWorks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Writing/" title="Writing">Writing<sup>1</sup></a></li>
+		
+			<li><a href="/tags/cucumber/" title="cucumber">cucumber<sup>1</sup></a></li>
+		
+			<li><a href="/tags/lifestyle/" title="lifestyle">lifestyle<sup>1</sup></a></li>
+		
+			<li><a href="/tags/profile/" title="profile">profile<sup>1</sup></a></li>
+		
+			<li><a href="/tags/工作总结/" title="工作总结">工作总结<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/DI/" style="font-size: 10.00px;">DI</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/Hibernate/" style="font-size: 10.00px;">Hibernate</a><a href="/tags/IoC/" style="font-size: 10.00px;">IoC</a><a href="/tags/Maven/" style="font-size: 10.00px;">Maven</a><a href="/tags/ORM/" style="font-size: 10.00px;">ORM</a><a href="/tags/Spring/" style="font-size: 20.00px;">Spring</a><a href="/tags/Spring-MVC/" style="font-size: 10.00px;">Spring MVC</a><a href="/tags/ThoughtWorks/" style="font-size: 10.00px;">ThoughtWorks</a><a href="/tags/Writing/" style="font-size: 10.00px;">Writing</a><a href="/tags/cucumber/" style="font-size: 10.00px;">cucumber</a><a href="/tags/lifestyle/" style="font-size: 10.00px;">lifestyle</a><a href="/tags/profile/" style="font-size: 10.00px;">profile</a><a href="/tags/工作总结/" style="font-size: 10.00px;">工作总结</a>
+    </div>
+  </div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">Hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014
+		
+		<a href="http://yoursite.com" target="_blank" title="Robin">Robin</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tphuang"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
