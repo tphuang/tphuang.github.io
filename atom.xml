@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-10-07T16:45:37.984Z</updated>
+  <updated>2014-10-07T16:56:01.352Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,30 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Maven分离单元测试和集成测试]]></title>
+    <link href="http://yoursite.com/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/"/>
+    <id>http://yoursite.com/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/</id>
+    <published>2014-10-07T16:50:18.000Z</published>
+    <updated>2014-10-07T16:53:24.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    <summary type="html">
+    <![CDATA[]]>
+    </summary>
+    
+      <category term="maven" scheme="http://yoursite.com/tags/maven/"/>
+    
+      <category term="cucumber" scheme="http://yoursite.com/tags/cucumber/"/>
+    
+      <category term="integration" scheme="http://yoursite.com/tags/integration/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Maven 学习]]></title>
     <link href="http://yoursite.com/2014/10/07/maven-learning/"/>
     <id>http://yoursite.com/2014/10/07/maven-learning/</id>
     <published>2014-10-07T15:24:04.000Z</published>
-    <updated>2014-10-07T16:44:40.000Z</updated>
+    <updated>2014-10-07T16:55:51.000Z</updated>
     <content type="html"><![CDATA[<h3 id="一-_Maven简介">一. Maven简介</h3>
 <p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件 (plugin)目标(goal)的逻辑。</p>
 <p><em>推荐书籍：</em> 目前中文版对maven介绍比较全的书籍是<a href="http://pan.baidu.com/wap/link?uk=3761431046&amp;shareid=932733601&amp;third=4" target="_blank" rel="external">《Maven实战》</a></p>
@@ -61,10 +80,11 @@
 <li>test ，只在测试时使用，用于编译和运行测试代码。不会随项目发布。</li>
 </ol>
 <h4 id="5-Maven_库">5.Maven 库</h4>
-<p>当第一次运行 maven 命令的时候，你需要 Internet 连接，因为它要从网上下载一些文件。那么它从哪里下载呢？它是从 maven 默认的远程库(<a href="http://repo1.maven.org/maven2" target="_blank" rel="external">http://repo1.maven.org/maven2</a>) 下载的。这个远程库有 maven 的核心插件和可供下载的 jar 文件。同时我们可以通过<a href="http://search.maven.org/" target="_blank" rel="external">Maven Repository</a>或者<a href="http://mvnrepository.com/" target="_blank" rel="external">MVN Repository</a>找到想要的架包和插件。<br>本地库是指 maven 下载了插件或者 jar 文件后存放在本地机器上的拷贝。在 Linux 上，它的位置在 ~/.m2/repository，在 Windows XP 上，在 C:\Documents and Settings\username.m2\repository ，在 Windows 7 上，在 C:\Users\username.m2\repository。当 maven 查找需要的 jar 文件时，它会先在本地库中寻找，只有在找不到的情况下，才会去远程库中找。</p>
+<p>当第一次运行 maven 命令的时候，你需要 Internet 连接，因为它要从网上下载一些文件。那么它从哪里下载呢？它是从 maven 默认的远程库(<a href="http://search.maven.org/" target="_blank" rel="external">http://search.maven.org/</a>) 下载的。这个远程库有 maven 的核心插件和可供下载的 jar 文件。同时我们可以通过<a href="http://mvnrepository.com/" target="_blank" rel="external">Maven Repository</a>找到想要的架包和插件。<br>本地库是指 maven 下载了插件或者 jar 文件后存放在本地机器上的拷贝。在 Linux 上，它的位置在 ~/.m2/repository，在 Windows XP 上，在 C:\Documents and Settings\username.m2\repository ，在 Windows 7 上，在 C:\Users\username.m2\repository。当 maven 查找需要的 jar 文件时，它会先在本地库中寻找，只有在找不到的情况下，才会去远程库中找。</p>
 <h4 id="6-Maven_Profiles">6.Maven Profiles</h4>
 <p>Profiles是maven的一个很关键的术语：profile是用来定义一些在build lifecycle中使用的environmental variations，profile可以设置成在不同的环境下激活不同的profile（例如：不同的OS激活不同的profile，不同的JVM激活不同的profile，不同的dabase激活不同的profile，不同的开发环境如Dev、QA、CI、Staging、Production等等）。<br>    使用：当使用Maven命令打包的时候要指定你要使用哪一个profiles id来装配你的项目，命令如下mvn clean package -P development ，其中-p是指启用哪一个profiles id.具体参见三. Maven管理单元测试与功能测试</p>
-<h3 id="三-_Maven管理单元测试与功能测试">三. Maven管理单元测试与功能测试</h3>
+<h3 id="三-_Maven管理单元测试和集成测试">三. Maven管理单元测试和集成测试</h3>
+<p>将会在下一篇博客中提到，详见：[Maven分离单元测试和集成测试]</p>
 <h3 id="四-_Maven常用命令">四. Maven常用命令</h3>
 <ol>
 <li>编译源代码： mvn compile </li>
@@ -90,8 +110,6 @@
     </summary>
     
       <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
-    
-      <category term="cucumber" scheme="http://yoursite.com/tags/cucumber/"/>
     
       <category term="profile" scheme="http://yoursite.com/tags/profile/"/>
     

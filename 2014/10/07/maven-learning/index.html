@@ -80,7 +80,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
     </p>
   <p class="article-time">
     <time datetime="2014-10-07T15:24:04.000Z" itemprop="datePublished">10月 7 2014</time>
-    更新日期:<time datetime="2014-10-07T16:44:40.000Z" itemprop="dateModified">10月 8 2014</time>
+    更新日期:<time datetime="2014-10-07T16:55:51.000Z" itemprop="dateModified">10月 8 2014</time>
     
   </p>
 </header>
@@ -89,7 +89,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试与功能测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试与功能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试和集成测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试和集成测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
 		</div>
 		
 		<h3 id="一-_Maven简介">一. Maven简介</h3>
@@ -133,10 +133,11 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 <li>test ，只在测试时使用，用于编译和运行测试代码。不会随项目发布。</li>
 </ol>
 <h4 id="5-Maven_库">5.Maven 库</h4>
-<p>当第一次运行 maven 命令的时候，你需要 Internet 连接，因为它要从网上下载一些文件。那么它从哪里下载呢？它是从 maven 默认的远程库(<a href="http://repo1.maven.org/maven2" target="_blank" rel="external">http://repo1.maven.org/maven2</a>) 下载的。这个远程库有 maven 的核心插件和可供下载的 jar 文件。同时我们可以通过<a href="http://search.maven.org/" target="_blank" rel="external">Maven Repository</a>或者<a href="http://mvnrepository.com/" target="_blank" rel="external">MVN Repository</a>找到想要的架包和插件。<br>本地库是指 maven 下载了插件或者 jar 文件后存放在本地机器上的拷贝。在 Linux 上，它的位置在 ~/.m2/repository，在 Windows XP 上，在 C:\Documents and Settings\username.m2\repository ，在 Windows 7 上，在 C:\Users\username.m2\repository。当 maven 查找需要的 jar 文件时，它会先在本地库中寻找，只有在找不到的情况下，才会去远程库中找。</p>
+<p>当第一次运行 maven 命令的时候，你需要 Internet 连接，因为它要从网上下载一些文件。那么它从哪里下载呢？它是从 maven 默认的远程库(<a href="http://search.maven.org/" target="_blank" rel="external">http://search.maven.org/</a>) 下载的。这个远程库有 maven 的核心插件和可供下载的 jar 文件。同时我们可以通过<a href="http://mvnrepository.com/" target="_blank" rel="external">Maven Repository</a>找到想要的架包和插件。<br>本地库是指 maven 下载了插件或者 jar 文件后存放在本地机器上的拷贝。在 Linux 上，它的位置在 ~/.m2/repository，在 Windows XP 上，在 C:\Documents and Settings\username.m2\repository ，在 Windows 7 上，在 C:\Users\username.m2\repository。当 maven 查找需要的 jar 文件时，它会先在本地库中寻找，只有在找不到的情况下，才会去远程库中找。</p>
 <h4 id="6-Maven_Profiles">6.Maven Profiles</h4>
 <p>Profiles是maven的一个很关键的术语：profile是用来定义一些在build lifecycle中使用的environmental variations，profile可以设置成在不同的环境下激活不同的profile（例如：不同的OS激活不同的profile，不同的JVM激活不同的profile，不同的dabase激活不同的profile，不同的开发环境如Dev、QA、CI、Staging、Production等等）。<br>    使用：当使用Maven命令打包的时候要指定你要使用哪一个profiles id来装配你的项目，命令如下mvn clean package -P development ，其中-p是指启用哪一个profiles id.具体参见三. Maven管理单元测试与功能测试</p>
-<h3 id="三-_Maven管理单元测试与功能测试">三. Maven管理单元测试与功能测试</h3>
+<h3 id="三-_Maven管理单元测试和集成测试">三. Maven管理单元测试和集成测试</h3>
+<p>将会在下一篇博客中提到，详见：[Maven分离单元测试和集成测试]</p>
 <h3 id="四-_Maven常用命令">四. Maven常用命令</h3>
 <ol>
 <li>编译源代码： mvn compile </li>
@@ -161,7 +162,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Maven/">Maven</a><a href="/tags/cucumber/">cucumber</a><a href="/tags/profile/">profile</a><a href="/tags/lifestyle/">lifestyle</a>
+  <span></span> <a href="/tags/Maven/">Maven</a><a href="/tags/profile/">profile</a><a href="/tags/lifestyle/">lifestyle</a>
   </div>
 
 
@@ -178,6 +179,14 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/" title="Maven分离单元测试和集成测试">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Maven分离单元测试和集成测试</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2014/09/27/IoC-vs-DI/"  title="IoC与DI学习">
@@ -199,7 +208,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试与功能测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试与功能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-_Maven简介"><span class="toc-number">1.</span> <span class="toc-text">一. Maven简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_核心概念"><span class="toc-number">2.</span> <span class="toc-text">二. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-POM"><span class="toc-number">2.1.</span> <span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Maven_插件"><span class="toc-number">2.2.</span> <span class="toc-text">2.Maven 插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Maven_生命周期"><span class="toc-number">2.3.</span> <span class="toc-text">3.Maven 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Maven_依赖管理"><span class="toc-number">2.4.</span> <span class="toc-text">4.Maven 依赖管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Maven_库"><span class="toc-number">2.5.</span> <span class="toc-text">5.Maven 库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Maven_Profiles"><span class="toc-number">2.6.</span> <span class="toc-text">6.Maven Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_Maven管理单元测试和集成测试"><span class="toc-number">3.</span> <span class="toc-text">三. Maven管理单元测试和集成测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_Maven常用命令"><span class="toc-number">4.</span> <span class="toc-text">四. Maven常用命令</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -244,7 +253,11 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 		
 			<li><a href="/tags/cucumber/" title="cucumber">cucumber<sup>1</sup></a></li>
 		
+			<li><a href="/tags/integration/" title="integration">integration<sup>1</sup></a></li>
+		
 			<li><a href="/tags/lifestyle/" title="lifestyle">lifestyle<sup>1</sup></a></li>
+		
+			<li><a href="/tags/maven/" title="maven">maven<sup>1</sup></a></li>
 		
 			<li><a href="/tags/profile/" title="profile">profile<sup>1</sup></a></li>
 		
@@ -258,7 +271,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/DI/" style="font-size: 10.00px;">DI</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/Hibernate/" style="font-size: 10.00px;">Hibernate</a><a href="/tags/IoC/" style="font-size: 10.00px;">IoC</a><a href="/tags/Maven/" style="font-size: 10.00px;">Maven</a><a href="/tags/ORM/" style="font-size: 10.00px;">ORM</a><a href="/tags/Spring/" style="font-size: 20.00px;">Spring</a><a href="/tags/Spring-MVC/" style="font-size: 10.00px;">Spring MVC</a><a href="/tags/ThoughtWorks/" style="font-size: 10.00px;">ThoughtWorks</a><a href="/tags/Writing/" style="font-size: 10.00px;">Writing</a><a href="/tags/cucumber/" style="font-size: 10.00px;">cucumber</a><a href="/tags/lifestyle/" style="font-size: 10.00px;">lifestyle</a><a href="/tags/profile/" style="font-size: 10.00px;">profile</a><a href="/tags/工作总结/" style="font-size: 10.00px;">工作总结</a>
+       <a href="/tags/DI/" style="font-size: 10.00px;">DI</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/Hibernate/" style="font-size: 10.00px;">Hibernate</a><a href="/tags/IoC/" style="font-size: 10.00px;">IoC</a><a href="/tags/Maven/" style="font-size: 10.00px;">Maven</a><a href="/tags/ORM/" style="font-size: 10.00px;">ORM</a><a href="/tags/Spring/" style="font-size: 20.00px;">Spring</a><a href="/tags/Spring-MVC/" style="font-size: 10.00px;">Spring MVC</a><a href="/tags/ThoughtWorks/" style="font-size: 10.00px;">ThoughtWorks</a><a href="/tags/Writing/" style="font-size: 10.00px;">Writing</a><a href="/tags/cucumber/" style="font-size: 10.00px;">cucumber</a><a href="/tags/integration/" style="font-size: 10.00px;">integration</a><a href="/tags/lifestyle/" style="font-size: 10.00px;">lifestyle</a><a href="/tags/maven/" style="font-size: 10.00px;">maven</a><a href="/tags/profile/" style="font-size: 10.00px;">profile</a><a href="/tags/工作总结/" style="font-size: 10.00px;">工作总结</a>
     </div>
   </div>
 
