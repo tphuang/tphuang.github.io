@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tphuang.github.io/404.html</loc>
+    <lastmod>2015-02-04T16:20:10.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tphuang.github.io/2014/09/21/Spring-MVC-Hiberante-set-up/</loc>
     <lastmod>2015-02-04T16:08:49.000Z</lastmod>
   </url>
