@@ -3,9 +3,9 @@
   <title><![CDATA[Robin's Blog]]></title>
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2015-02-02T15:25:15.533Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://tphuang.github.io/"/>
+  <updated>2015-02-04T08:52:11.348Z</updated>
+  <id>http://tphuang.github.io/</id>
   
   <author>
     <name><![CDATA[Robin]]></name>
@@ -16,48 +16,48 @@
   
   <entry>
     <title><![CDATA[Gradle分离单元测试和集成测试]]></title>
-    <link href="http://yoursite.com/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/"/>
-    <id>http://yoursite.com/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/</id>
+    <link href="http://tphuang.github.io/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/"/>
+    <id>http://tphuang.github.io/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/</id>
     <published>2014-10-07T17:04:51.000Z</published>
-    <updated>2014-10-07T17:05:50.000Z</updated>
+    <updated>2015-02-04T08:41:32.000Z</updated>
     <content type="html"><![CDATA[]]></content>
     <summary type="html">
     <![CDATA[]]>
     </summary>
     
-      <category term="Gradle" scheme="http://yoursite.com/tags/Gradle/"/>
+      <category term="Gradle" scheme="http://tphuang.github.io/tags/Gradle/"/>
     
-      <category term="cucumber" scheme="http://yoursite.com/tags/cucumber/"/>
+      <category term="Cucumber" scheme="http://tphuang.github.io/tags/Cucumber/"/>
     
-      <category term="integration" scheme="http://yoursite.com/tags/integration/"/>
+      <category term="Integration" scheme="http://tphuang.github.io/tags/Integration/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Maven分离单元测试和集成测试]]></title>
-    <link href="http://yoursite.com/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/"/>
-    <id>http://yoursite.com/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/</id>
+    <link href="http://tphuang.github.io/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/"/>
+    <id>http://tphuang.github.io/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/</id>
     <published>2014-10-07T16:50:18.000Z</published>
-    <updated>2014-10-07T16:53:24.000Z</updated>
+    <updated>2015-02-04T08:41:32.000Z</updated>
     <content type="html"><![CDATA[]]></content>
     <summary type="html">
     <![CDATA[]]>
     </summary>
     
-      <category term="maven" scheme="http://yoursite.com/tags/maven/"/>
+      <category term="Maven" scheme="http://tphuang.github.io/tags/Maven/"/>
     
-      <category term="cucumber" scheme="http://yoursite.com/tags/cucumber/"/>
+      <category term="Cucumber" scheme="http://tphuang.github.io/tags/Cucumber/"/>
     
-      <category term="integration" scheme="http://yoursite.com/tags/integration/"/>
+      <category term="Integration" scheme="http://tphuang.github.io/tags/Integration/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Maven 学习]]></title>
-    <link href="http://yoursite.com/2014/10/07/maven-learning/"/>
-    <id>http://yoursite.com/2014/10/07/maven-learning/</id>
+    <link href="http://tphuang.github.io/2014/10/07/maven-learning/"/>
+    <id>http://tphuang.github.io/2014/10/07/maven-learning/</id>
     <published>2014-10-07T15:24:04.000Z</published>
-    <updated>2015-02-02T15:23:18.000Z</updated>
+    <updated>2015-02-04T08:40:57.000Z</updated>
     <content type="html"><![CDATA[<h3 id="一-_Maven简介">一. Maven简介</h3>
 <p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件 (plugin)目标(goal)的逻辑。</p>
 <p><em>推荐书籍：</em> 目前中文版对maven介绍比较全的书籍是<a href="http://pan.baidu.com/wap/link?uk=3761431046&amp;shareid=932733601&amp;third=4" target="_blank" rel="external">《Maven实战》</a></p>
@@ -128,18 +128,16 @@
 <p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系]]>
     </summary>
     
-      <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
+      <category term="Maven" scheme="http://tphuang.github.io/tags/Maven/"/>
     
-      <category term="profile" scheme="http://yoursite.com/tags/profile/"/>
-    
-      <category term="lifestyle" scheme="http://yoursite.com/tags/lifestyle/"/>
+      <category term="Profile" scheme="http://tphuang.github.io/tags/Profile/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[IoC与DI学习]]></title>
-    <link href="http://yoursite.com/2014/09/27/IoC-vs-DI/"/>
-    <id>http://yoursite.com/2014/09/27/IoC-vs-DI/</id>
+    <link href="http://tphuang.github.io/2014/09/27/IoC-vs-DI/"/>
+    <id>http://tphuang.github.io/2014/09/27/IoC-vs-DI/</id>
     <published>2014-09-27T12:39:46.000Z</published>
     <updated>2015-02-02T15:23:01.000Z</updated>
     <content type="html"><![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的实现。<br>IoC与DI的关系就好比Java中的”接口”和”接口的实现类”的关系一样。目前有四种DI实现：setter注入、构造器注入、接口注入和静态工厂注入，其中后两种应用较少。</p>
@@ -180,18 +178,18 @@
     <![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的]]>
     </summary>
     
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+      <category term="Spring" scheme="http://tphuang.github.io/tags/Spring/"/>
     
-      <category term="IoC" scheme="http://yoursite.com/tags/IoC/"/>
+      <category term="IoC" scheme="http://tphuang.github.io/tags/IoC/"/>
     
-      <category term="DI" scheme="http://yoursite.com/tags/DI/"/>
+      <category term="DI" scheme="http://tphuang.github.io/tags/DI/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Spring MVC+Hiberante环境搭建]]></title>
-    <link href="http://yoursite.com/2014/09/21/Spring-MVC-Hiberante-set-up/"/>
-    <id>http://yoursite.com/2014/09/21/Spring-MVC-Hiberante-set-up/</id>
+    <link href="http://tphuang.github.io/2014/09/21/Spring-MVC-Hiberante-set-up/"/>
+    <id>http://tphuang.github.io/2014/09/21/Spring-MVC-Hiberante-set-up/</id>
     <published>2014-09-21T11:02:39.000Z</published>
     <updated>2015-02-02T15:24:24.000Z</updated>
     <content type="html"><![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。</p>
@@ -247,22 +245,22 @@
     <![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。<]]>
     </summary>
     
-      <category term="Hibernate" scheme="http://yoursite.com/tags/Hibernate/"/>
+      <category term="Hibernate" scheme="http://tphuang.github.io/tags/Hibernate/"/>
     
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+      <category term="Spring" scheme="http://tphuang.github.io/tags/Spring/"/>
     
-      <category term="Spring MVC" scheme="http://yoursite.com/tags/Spring-MVC/"/>
+      <category term="Spring MVC" scheme="http://tphuang.github.io/tags/Spring-MVC/"/>
     
-      <category term="ORM" scheme="http://yoursite.com/tags/ORM/"/>
+      <category term="ORM" scheme="http://tphuang.github.io/tags/ORM/"/>
     
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+      <category term="blog" scheme="http://tphuang.github.io/categories/blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[终于有了个自建的博客了]]></title>
-    <link href="http://yoursite.com/2014/09/21/my-first-blog-build-by-myslef/"/>
-    <id>http://yoursite.com/2014/09/21/my-first-blog-build-by-myslef/</id>
+    <link href="http://tphuang.github.io/2014/09/21/my-first-blog-build-by-myslef/"/>
+    <id>http://tphuang.github.io/2014/09/21/my-first-blog-build-by-myslef/</id>
     <published>2014-09-21T07:11:15.000Z</published>
     <updated>2014-09-28T17:10:55.000Z</updated>
     <content type="html"><![CDATA[<p>终于有了一个自建的博客，在此留下足迹，以作纪念。</p>
@@ -283,16 +281,16 @@
 <p>这儿要感谢我的同事<a href="http://toozhao.com/" title="峻伟博客" target="_blank" rel="external">峻伟</a>，是他让我知道了<strong>]]>
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://tphuang.github.io/tags/Hexo/"/>
     
-      <category term="Writing" scheme="http://yoursite.com/tags/Writing/"/>
+      <category term="Writing" scheme="http://tphuang.github.io/tags/Writing/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[九月第2周工作学习总结]]></title>
-    <link href="http://yoursite.com/2014/09/21/summary-for-work-and-study-in-September/"/>
-    <id>http://yoursite.com/2014/09/21/summary-for-work-and-study-in-September/</id>
+    <link href="http://tphuang.github.io/2014/09/21/summary-for-work-and-study-in-September/"/>
+    <id>http://tphuang.github.io/2014/09/21/summary-for-work-and-study-in-September/</id>
     <published>2014-09-21T05:04:47.000Z</published>
     <updated>2014-09-28T17:10:07.000Z</updated>
     <content type="html"><![CDATA[<p>一直很佩服坚持写博客，坚持做一件事的人，发现自己现在真的越来越缺乏耐心了，很多时候都比较急功近利。</p>
@@ -315,11 +313,11 @@
 <p>写博客在我看来，现目前主要功用是一段时间学习的总结和整理，同时也是自己一点点进步的最好凭证。这种输出方式，可以更好地驱动自己定期整理和总结所思所学，同时这些记录]]>
     </summary>
     
-      <category term="工作总结" scheme="http://yoursite.com/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
+      <category term="工作总结" scheme="http://tphuang.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
     
-      <category term="ThoughtWorks" scheme="http://yoursite.com/tags/ThoughtWorks/"/>
+      <category term="ThoughtWorks" scheme="http://tphuang.github.io/tags/ThoughtWorks/"/>
     
-      <category term="blog" scheme="http://yoursite.com/categories/blog/"/>
+      <category term="blog" scheme="http://tphuang.github.io/categories/blog/"/>
     
   </entry>
   
