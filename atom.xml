@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tphuang.github.io/"/>
-  <updated>2015-02-05T04:26:47.011Z</updated>
+  <updated>2015-02-05T04:43:46.149Z</updated>
   <id>http://tphuang.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://tphuang.github.io/2014/11/20/add-Fork-me-on-Github-ribbon/"/>
     <id>http://tphuang.github.io/2014/11/20/add-Fork-me-on-Github-ribbon/</id>
     <published>2014-11-20T03:23:28.000Z</published>
-    <updated>2015-02-05T04:25:24.000Z</updated>
+    <updated>2015-02-05T04:43:15.000Z</updated>
     <content type="html"><![CDATA[<p>我们经常看到很多博客的左上角或者右上角有个“Fork me on Github”的丝带（ribbon），那么如何才能给自己的博客也添加一个类似的丝带呢？</p>
 <p>网上的方法有很多，这里推荐一个非常好的博客<a href="https://aralbalkan.com/scribbles/fork-me-on-github-retina-ribbons/" target="_blank" rel="external">Fork me on GitHub Retina Ribbons</a>.这个网站不仅有很不同颜色样式的丝带，还提供了源码。比如：</p>
 <p><img src="http://aral.github.com/fork-me-on-github-retina-ribbons/left-red@2x.png" alt=""> <img src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png" alt=""></p>
@@ -32,13 +32,11 @@
 <p>网上的方法有很多，这里推荐一个非常好的博客<a href="https://aralbalkan.com/]]>
     </summary>
     
-      <category term="Ribbon" scheme="http://tphuang.github.io/tags/Ribbon/"/>
-    
-      <category term="Github" scheme="http://tphuang.github.io/tags/Github/"/>
-    
-      <category term="Fork" scheme="http://tphuang.github.io/tags/Fork/"/>
+      <category term="GitHub" scheme="http://tphuang.github.io/tags/GitHub/"/>
     
       <category term="Hexo" scheme="http://tphuang.github.io/tags/Hexo/"/>
+    
+      <category term="Hexo" scheme="http://tphuang.github.io/categories/Hexo/"/>
     
   </entry>
   
@@ -47,7 +45,7 @@
     <link href="http://tphuang.github.io/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/"/>
     <id>http://tphuang.github.io/2014/10/08/separate-unit-tests-and-integration-tests-with-Gradle/</id>
     <published>2014-10-07T17:04:51.000Z</published>
-    <updated>2015-02-04T08:41:32.000Z</updated>
+    <updated>2015-02-05T04:41:10.000Z</updated>
     <content type="html"><![CDATA[]]></content>
     <summary type="html">
     <![CDATA[]]>
@@ -59,6 +57,8 @@
     
       <category term="Integration" scheme="http://tphuang.github.io/tags/Integration/"/>
     
+      <category term="持续集成" scheme="http://tphuang.github.io/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
   </entry>
   
   <entry>
@@ -66,7 +66,7 @@
     <link href="http://tphuang.github.io/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/"/>
     <id>http://tphuang.github.io/2014/10/08/separate-unit-tests-and-intergration-tests-with-Maven/</id>
     <published>2014-10-07T16:50:18.000Z</published>
-    <updated>2015-02-04T08:41:32.000Z</updated>
+    <updated>2015-02-05T04:39:29.000Z</updated>
     <content type="html"><![CDATA[]]></content>
     <summary type="html">
     <![CDATA[]]>
@@ -78,6 +78,8 @@
     
       <category term="Integration" scheme="http://tphuang.github.io/tags/Integration/"/>
     
+      <category term="持续集成" scheme="http://tphuang.github.io/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
   </entry>
   
   <entry>
@@ -85,7 +87,7 @@
     <link href="http://tphuang.github.io/2014/10/07/maven-learning/"/>
     <id>http://tphuang.github.io/2014/10/07/maven-learning/</id>
     <published>2014-10-07T15:24:04.000Z</published>
-    <updated>2015-02-04T10:54:36.000Z</updated>
+    <updated>2015-02-05T04:40:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Maven简介">Maven简介</h2>
 <p>Maven是一个项目管理和构建的自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期 (Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件 (plugin)目标(goal)的逻辑。</p>
 <p><em>推荐书籍：</em> 目前中文版对maven介绍比较全的书籍是<a href="http://pan.baidu.com/wap/link?uk=3761431046&amp;shareid=932733601&amp;third=4" target="_blank" rel="external">《Maven实战》</a></p>
@@ -158,7 +160,7 @@
     
       <category term="Maven" scheme="http://tphuang.github.io/tags/Maven/"/>
     
-      <category term="Profile" scheme="http://tphuang.github.io/tags/Profile/"/>
+      <category term="持续集成" scheme="http://tphuang.github.io/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
     
   </entry>
   
@@ -167,7 +169,7 @@
     <link href="http://tphuang.github.io/2014/09/27/IoC-vs-DI/"/>
     <id>http://tphuang.github.io/2014/09/27/IoC-vs-DI/</id>
     <published>2014-09-27T12:39:46.000Z</published>
-    <updated>2015-02-04T10:42:15.000Z</updated>
+    <updated>2015-02-05T04:35:25.000Z</updated>
     <content type="html"><![CDATA[<p>IoC, Inversion of Control，控制反转， 控制权从应用程序转移到IoC容器（如Spring）<br>IoC是一种通用的设计原则，而DI（Dependency Injection，依赖注入）则是具体的设计模式，它体现了IoC的设计原则,DI是IoC典型的实现。<br>IoC与DI的关系就好比Java中的”接口”和”接口的实现类”的关系一样。目前有四种DI实现：setter注入、构造器注入、接口注入和静态工厂注入，其中后两种应用较少。</p>
 <h2 id="setter注入">setter注入</h2>
 <p>首先有个接口是Animal, Cat是Animal的实现类，有个AnimalAction的逻辑类。</p>
@@ -211,6 +213,8 @@
     
       <category term="DI" scheme="http://tphuang.github.io/tags/DI/"/>
     
+      <category term="Java" scheme="http://tphuang.github.io/categories/Java/"/>
+    
   </entry>
   
   <entry>
@@ -218,7 +222,7 @@
     <link href="http://tphuang.github.io/2014/09/21/Spring-MVC-Hiberante-set-up/"/>
     <id>http://tphuang.github.io/2014/09/21/Spring-MVC-Hiberante-set-up/</id>
     <published>2014-09-21T11:02:39.000Z</published>
-    <updated>2015-02-04T16:08:49.000Z</updated>
+    <updated>2015-02-05T04:41:36.000Z</updated>
     <content type="html"><![CDATA[<p>最近将学习了<a href="http://hibernate.org/" target="_blank" rel="external">Hibernate</a>，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。</p>
 <h2 id="添加相应的架包">添加相应的架包</h2>
 <p>我的项目是采用Gradle进行管理的，具体架包主要应包括:</p>
@@ -276,11 +280,9 @@
     
       <category term="Spring" scheme="http://tphuang.github.io/tags/Spring/"/>
     
-      <category term="Spring MVC" scheme="http://tphuang.github.io/tags/Spring-MVC/"/>
-    
       <category term="ORM" scheme="http://tphuang.github.io/tags/ORM/"/>
     
-      <category term="blog" scheme="http://tphuang.github.io/categories/blog/"/>
+      <category term="Java" scheme="http://tphuang.github.io/categories/Java/"/>
     
   </entry>
   
@@ -289,7 +291,7 @@
     <link href="http://tphuang.github.io/2014/09/21/my-first-blog-build-by-myslef/"/>
     <id>http://tphuang.github.io/2014/09/21/my-first-blog-build-by-myslef/</id>
     <published>2014-09-21T07:11:15.000Z</published>
-    <updated>2014-09-28T17:10:55.000Z</updated>
+    <updated>2015-02-05T04:40:46.000Z</updated>
     <content type="html"><![CDATA[<p>终于有了一个自建的博客，在此留下足迹，以作纪念。</p>
 <p>这儿要感谢我的同事<a href="http://toozhao.com/" title="峻伟博客" target="_blank" rel="external">峻伟</a>，是他让我知道了<strong><em>Hexo</em></strong>的存在，也是他的督促让我有了这个博客的诞生；同时还要感谢<a href="http://zipperary.com/categories/hexo/" title="Zipper博客" target="_blank" rel="external">Zipper</a>, 虽然不认识他，但他的关于Hexo系列博客帮助我一步步搭建起了该博客。<br></p>
 <p>仔细看了下俊伟的博客，居然有2006年的博客，天啦，他高一就开始写博客了，细细想来那会儿我刚接触网络，还是从申请QQ开始的，那会儿就会聊QQ，简单的看看网页。我算了算他的年龄，好像比我还小哎，哎呀真不敢比啊。Anyway，他就是我的目标啦，现目前我有三件大事：学技术、练英语、写博客。</p>
@@ -310,7 +312,7 @@
     
       <category term="Hexo" scheme="http://tphuang.github.io/tags/Hexo/"/>
     
-      <category term="Writing" scheme="http://tphuang.github.io/tags/Writing/"/>
+      <category term="随笔生活" scheme="http://tphuang.github.io/categories/%E9%9A%8F%E7%AC%94%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -319,7 +321,7 @@
     <link href="http://tphuang.github.io/2014/09/21/summary-for-work-and-study-in-September/"/>
     <id>http://tphuang.github.io/2014/09/21/summary-for-work-and-study-in-September/</id>
     <published>2014-09-21T05:04:47.000Z</published>
-    <updated>2015-02-04T10:46:32.000Z</updated>
+    <updated>2015-02-05T04:35:02.000Z</updated>
     <content type="html"><![CDATA[<p>一直很佩服坚持写博客，坚持做一件事的人，发现自己现在真的越来越缺乏耐心了，很多时候都比较急功近利。</p>
 <p>写博客在我看来，现目前主要功用是一段时间学习的总结和整理，同时也是自己一点点进步的最好凭证。这种输出方式，可以更好地驱动自己定期整理和总结所思所学，同时这些记录下来的点滴和进步也会让自己产生成就感，驱动自己更多学习和更大进步。</p>
 <p>大多时候喜欢将感兴趣和重要的东西放在有道笔记中，觉得这种方式更随意些，但就是缺乏阶段性的总结和整理，使得笔记有些乱了。所以这个博客就暂时定为每周一次，作为一周学习、工作的整理吧。</p>
@@ -344,7 +346,7 @@
     
       <category term="ThoughtWorks" scheme="http://tphuang.github.io/tags/ThoughtWorks/"/>
     
-      <category term="blog" scheme="http://tphuang.github.io/categories/blog/"/>
+      <category term="职业生涯" scheme="http://tphuang.github.io/categories/%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF/"/>
     
   </entry>
   
