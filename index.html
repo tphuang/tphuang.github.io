@@ -53,7 +53,6 @@
 			</a></div>
 			<nav class="animated">
 				<ul>
-					<ul>
 					 
 						<li><a href="/">首页</a></li>
 					
@@ -61,14 +60,165 @@
 					
 						<li><a href="/about">关于</a></li>
 					
+                    <li><a title="High一下" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})() '>High一下</a></li>
+
 					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:tphuang.github.io">
-					</form>
-					
+                        
+                        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+                            <label>Search</label>
+                            <input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+                            <input type="hidden" name="q" value="site:tphuang.github.io">
+                        </form>
+                        
 					</li>
 				</ul>
 			</nav>			
@@ -77,6 +227,27 @@
     </header>
     <div id="container">
       <div id="main">
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2014/11/22/have-a-high/" title="High一下" itemprop="url">
+  
+    <h1 itemprop="name">High一下</h1>
+    
+     
+           <p itemprop="description" >今天不经意间注意到了Zippera博客右上角的「High一下」功能，玩心顿起，便连High了好几下。觉得特别有意思，于是想在我的博客也放上这个功能，其实实现起来还是很简单的。
+对于 Hexo 用户，可以在themes/jacman/layout/_partial/目录下新建一个叫</p>
+        
+    
+    <time datetime="2014-11-22T09:57:06.000Z" itemprop="datePublished">2014.11.22</time>
+  </a>
+</section>
+
+
+
+
+
 
   
 <section class="post" itemscope itemprop="blogitem">
@@ -188,11 +359,11 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
     <h1 itemprop="name">Spring MVC+Hiberante环境搭建</h1>
     
      
-           <p itemprop="description" >最近将学习了Hibernate，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。
+           <p itemprop="description" >最近学习了Hibernate，并将Hibernate集成到Spring MVC之中，并替换原有的JDBC，遇到了很多问题，在此记录一下。
 添加相应的架包
 我的项目是采用Gradle进行管理的，具体架包主要应包括:
 
-org.springframework:spring-orm:</p>
+org.springframework:spring-orm:4</p>
         
     
     <time datetime="2014-09-21T11:02:39.000Z" itemprop="datePublished">2014.09.21</time>
@@ -226,27 +397,10 @@ org.springframework:spring-orm:</p>
 
 
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2014/09/21/summary-for-work-and-study-in-September/" title="九月第2周工作学习总结" itemprop="url">
-  
-    <h1 itemprop="name">九月第2周工作学习总结</h1>
-    
-     
-           <p itemprop="description" >一直很佩服坚持写博客，坚持做一件事的人，发现自己现在真的越来越缺乏耐心了，很多时候都比较急功近利。
-写博客在我看来，现目前主要功用是一段时间学习的总结和整理，同时也是自己一点点进步的最好凭证。这种输出方式，可以更好地驱动自己定期整理和总结所思所学，同时这些记录下来的点滴和进步也会</p>
-        
-    
-    <time datetime="2014-09-21T05:04:47.000Z" itemprop="datePublished">2014.09.21</time>
-  </a>
-</section>
 
-
-
-
-
-
+  <nav id="page-nav" class="clearfix unexpand">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -260,7 +414,7 @@ org.springframework:spring-orm:</p>
 	<p class="asidetitle">分类</p>
 		<ul>
 		
-			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
 		
 			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
 		
@@ -279,7 +433,7 @@ org.springframework:spring-orm:</p>
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
 		
 			<li><a href="/tags/Maven/" title="Maven">Maven<sup>2</sup></a></li>
 		
