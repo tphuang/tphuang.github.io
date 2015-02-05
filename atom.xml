@@ -4,7 +4,7 @@
   <subtitle><![CDATA[What pains us trains us]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tphuang.github.io/"/>
-  <updated>2015-02-04T17:01:29.450Z</updated>
+  <updated>2015-02-05T04:26:03.423Z</updated>
   <id>http://tphuang.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[给博客添加“Fork me on Github”丝带]]></title>
+    <link href="http://tphuang.github.io/2014/11/20/add-Fork-me-on-Github-ribbon/"/>
+    <id>http://tphuang.github.io/2014/11/20/add-Fork-me-on-Github-ribbon/</id>
+    <published>2014-11-20T03:23:28.000Z</published>
+    <updated>2015-02-05T04:25:24.000Z</updated>
+    <content type="html"><![CDATA[<p>我们经常看到很多博客的左上角或者右上角有个“Fork me on Github”的丝带（ribbon），那么如何才能给自己的博客也添加一个类似的丝带呢？</p>
+<p>网上的方法有很多，这里推荐一个非常好的博客<a href="https://aralbalkan.com/scribbles/fork-me-on-github-retina-ribbons/" target="_blank" rel="external">Fork me on GitHub Retina Ribbons</a>.这个网站不仅有很不同颜色样式的丝带，还提供了源码。比如：</p>
+<p><img src="http://aral.github.com/fork-me-on-github-retina-ribbons/left-red@2x.png" alt=""> <img src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png" alt=""></p>
+<p>我的博客就选用了绿色的ribbon，将相应代码复制到Hexo正在使用的theme下layout/_partial/header.ejs中即可。比如我使用的<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">jacman theme</a>，那么将下面的代码（注意将you改为你自己的github上的注册名）粘贴到刚才的目录中，放置在最后即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://github.com/you"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">style</span>=<span class="value">"position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;"</span></span></div><div class="line">    <span class="attribute">src</span>=<span class="value">"http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png"</span></div><div class="line">    <span class="attribute">alt</span>=<span class="value">"Fork me on GitHub"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="title">a</span>&gt;</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我们经常看到很多博客的左上角或者右上角有个“Fork me on Github”的丝带（ribbon），那么如何才能给自己的博客也添加一个类似的丝带呢？</p>
+<p>网上的方法有很多，这里推荐一个非常好的博客<a href="https://aralbalkan.com/]]>
+    </summary>
+    
+      <category term="Ribbon" scheme="http://tphuang.github.io/tags/Ribbon/"/>
+    
+      <category term="Github" scheme="http://tphuang.github.io/tags/Github/"/>
+    
+      <category term="Fork" scheme="http://tphuang.github.io/tags/Fork/"/>
+    
+      <category term="Hexo" scheme="http://tphuang.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Gradle分离单元测试和集成测试]]></title>
