@@ -1,0 +1,696 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>网页头部标签meta详解 | Robin&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Robin">
+    
+    <meta name="description" content="meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他web服务。 —— W3School
+
+网页头部有两个标签titel和meta, title比较简单，就是网页标题，meta的内容还是蛮多的，在">
+    
+    
+    <meta name="description" content="meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他web服务。 —— W3School
+
+网页头部有两个标签titel和meta, title比较简单，就是网页标题，meta的内容还是蛮多的，在此总结一下。
+meta共有两个属性，它们分别是name属性和http-equiv属性，不同的属性又">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页头部标签meta详解">
+<meta property="og:url" content="http://tphuang.github.io/2014/12/27/explain-http-meta/">
+<meta property="og:site_name" content="Robin's Blog">
+<meta property="og:description" content="meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他web服务。 —— W3School
+
+网页头部有两个标签titel和meta, title比较简单，就是网页标题，meta的内容还是蛮多的，在此总结一下。
+meta共有两个属性，它们分别是name属性和http-equiv属性，不同的属性又">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网页头部标签meta详解">
+<meta name="twitter:description" content="meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他web服务。 —— W3School
+
+网页头部有两个标签titel和meta, title比较简单，就是网页标题，meta的内容还是蛮多的，在此总结一下。
+meta共有两个属性，它们分别是name属性和http-equiv属性，不同的属性又">
+
+
+    
+    <link rel="alternative" href="/atom.xml" title="Robin&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Robin&#39;s Blog" title="Robin&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Robin&#39;s Blog">Robin&#39;s Blog</a></h1>
+				<h2 class="blog-motto">What pains us trains us</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+                    <li><a title="High一下" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})() '>High一下</a></li>
+
+					<li>
+                        
+                        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+                            <label>Search</label>
+                            <input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+                            <input type="hidden" name="q" value="site:tphuang.github.io">
+                        </form>
+                        
+					</li>
+				</ul>
+			</nav>			
+</div>
+<a class="github-ribbon" href="https://github.com/tphuang" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; width: 160px; height: 160px;" src="/img/fork-me-on-github.png" alt="Fork me on GitHub"></a>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/12/27/explain-http-meta/" title="网页头部标签meta详解" itemprop="url">网页头部标签meta详解</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://tphuang.github.io/about" title="Robin" target="_blank" itemprop="author">Robin</a>
+		
+  <p class="article-time">
+    <time datetime="2014-12-26T16:15:44.000Z" itemprop="datePublished"> 发表于 2014.12.27</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#meta的name属性"><span class="toc-number">1.</span> <span class="toc-text">meta的name属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Keywords(关键字)"><span class="toc-number">1.1.</span> <span class="toc-text">Keywords(关键字)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#description(网站内容描述)"><span class="toc-number">1.2.</span> <span class="toc-text">description(网站内容描述)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#robots(机器人向导)"><span class="toc-number">1.3.</span> <span class="toc-text">robots(机器人向导)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#author(作者)"><span class="toc-number">1.4.</span> <span class="toc-text">author(作者)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta的http-equiv"><span class="toc-number">2.</span> <span class="toc-text">meta的http-equiv</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Expires(期限)"><span class="toc-number">2.1.</span> <span class="toc-text">Expires(期限)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pragma(cache模式)"><span class="toc-number">2.2.</span> <span class="toc-text">Pragma(cache模式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Refresh(刷新)"><span class="toc-number">2.3.</span> <span class="toc-text">Refresh(刷新)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-Cookie(cookie设定)"><span class="toc-number">2.4.</span> <span class="toc-text">Set-Cookie(cookie设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Window-target(显示窗口的设定)"><span class="toc-number">2.5.</span> <span class="toc-text">Window-target(显示窗口的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content-Type(显示字符集的设定)"><span class="toc-number">2.6.</span> <span class="toc-text">content-Type(显示字符集的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-Exit_/Page-Enter(进入页面、离开页面动画效果)"><span class="toc-number">2.7.</span> <span class="toc-text">Page-Exit /Page-Enter(进入页面、离开页面动画效果)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta扩展的标签"><span class="toc-number">3.</span> <span class="toc-text">meta扩展的标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Open_Graph_Protocol应注意"><span class="toc-number">3.1.</span> <span class="toc-text">使用Open Graph Protocol应注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">4.</span> <span class="toc-text">参考文章</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<p>meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他web服务。 —— W3School</p>
+</blockquote>
+<p>网页头部有两个标签titel和meta, title比较简单，就是网页标题，meta的内容还是蛮多的，在此总结一下。</p>
+<p>meta共有两个属性，它们分别是name属性和http-equiv属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。meta在HTML5中又扩展了新的标签如meta property=og.</p>
+<h2 id="meta的name属性">meta的name属性</h2>
+<p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。meat标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞</code>。</p>
+<p>其中name属性主要有以下几种参数：</p>
+<h3 id="Keywords(关键字)">Keywords(关键字)</h3>
+<p>说明：keywords用来告诉搜索引擎你网页的关键字是什么。<br>举例：<code>＜meta name =&quot;keywords&quot; content=&quot;science, education,culture,politics,relationships,human&quot;＞</code></p>
+<h3 id="description(网站内容描述)">description(网站内容描述)</h3>
+<p>说明：description用来告诉搜索引擎你的网站主要内容。<br>举例：<code>＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science,education,culture.&quot;＞</code></p>
+<h3 id="robots(机器人向导)">robots(机器人向导)</h3>
+<p>说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"robots"</span> <span class="attribute">content</span>=<span class="value">"index,follow"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">       all：文件将被检索，且页面上的链接可以被查询；</div><div class="line">       none：文件将不被检索，且页面上的链接不可以被查询；</div><div class="line">       index：文件将被检索；</div><div class="line">       follow：页面上的链接可以被查询；</div><div class="line">       noindex：文件将不被检索；</div><div class="line">       nofollow：页面上的链接不可以被查询。--&gt;</div></pre></td></tr></table></figure>
+
+<h3 id="author(作者)">author(作者)</h3>
+<p>说明：标注网页的作者<br>举例：<code>＜meta name=&quot;author&quot; content=&quot;***@yahoo.com.con&quot;＞</code></p>
+<h2 id="meta的http-equiv">meta的http-equiv</h2>
+<p>http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br> meat标签的http-equiv属性语法格式是：<code>＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞</code></p>
+<p>其中http-equiv属性主要有以下几种参数：</p>
+<h3 id="Expires(期限)">Expires(期限)</h3>
+<p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。<br>用法：<code>＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2014 18:18:18 GMT&quot;＞</code> 必须使用GMT的时间格式。</p>
+<h3 id="Pragma(cache模式)">Pragma(cache模式)</h3>
+<p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。<br>用法：<code>＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</code><br>注意：这样设定，访问者将无法脱机浏览。</p>
+<h3 id="Refresh(刷新)">Refresh(刷新)</h3>
+<p>说明：自动刷新并指向新页面。<br>用法：<code>＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://phigo.bokee.com&quot;＞</code><br>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p>
+<h3 id="Set-Cookie(cookie设定)">Set-Cookie(cookie设定)</h3>
+<p>说明：如果网页过期，那么存盘的cookie将被删除。<br>用法：<code>＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Fri, 12 Jan 2014 18:18:18 GMT； path=/&quot;＞</code><br>注意：必须使用GMT的时间格式。</p>
+<h3 id="Window-target(显示窗口的设定)">Window-target(显示窗口的设定)</h3>
+<p>说明：强制页面在当前窗口以独立页面显示。<br>用法：<code>＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</code><br>注意：用来防止别人在框架里调用自己的页面。</p>
+<h3 id="content-Type(显示字符集的设定)">content-Type(显示字符集的设定)</h3>
+<p>说明：设定页面使用的字符集。<br>用法：<code>＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;＞</code></p>
+<h3 id="Page-Exit_/Page-Enter(进入页面、离开页面动画效果)">Page-Exit /Page-Enter(进入页面、离开页面动画效果)</h3>
+<p>使用meta标签，我们还可以在进入网页或者离开网页的一刹那实现动画效果，我们只要在页面的html代码中的＜head＞＜/head＞标签之间添加如下代码就可以了：<br><code>＜meta http-equiv=&quot;Page-Enter&quot; content=&quot;revealTrans(duration=5, transition=23)&quot;＞</code><br><code>＜meta http-equiv=&quot;Page-Exit&quot; content=&quot;revealTrans(duration=5, transition=23)&quot;＞</code><br>一旦上述代码被加到一个网页中后，我们再进出页面时就会看到一些特殊效果，这个功能其实与FrontPage2000中的Format/Page Transition一样，但我们要注意的是所加网页不能是一个Frame页;Duration的值为网页动态过渡的时间，单位为秒。Transition是过渡方式，它的值为0到23，分别对应24种过渡方式。(此处不一一例举了)</p>
+<h2 id="meta扩展的标签">meta扩展的标签</h2>
+<p>比如Meta Property=og标签，og是一种新的HTTP头部标记，即Open Graph Protocol，这种协议可以让网页成为一个“富媒体对象”。用了Meta Property=og标签，就是你同意了网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。而该标签能够正确且更有效地将你的内容分享到SNS网站。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:type”</span> <span class="attribute">content</span>=<span class="value">”video”</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:title”</span> <span class="attribute">content</span>=<span class="value">”五月天_突然好想你MV现场版”</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:image”</span> <span class="attribute">content</span>=<span class="value">”http:</span>//<span class="attribute">g1.ykimg.com</span>/***<span class="attribute">.jpg</span>″/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:url”</span> <span class="attribute">content</span>=<span class="value">”http:</span>//<span class="attribute">v.youku.com</span>/<span class="attribute">v_show</span>/<span class="attribute">id_XMTIyMTY5NzMy.html</span>”/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:videosrc”</span> <span class="attribute">content</span>=<span class="value">”http:</span>//<span class="attribute">player.youku.com</span>/<span class="attribute">player.php</span>/<span class="attribute">sid</span>/***<span class="attribute">.swf</span>”/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:width”</span> <span class="attribute">content</span>=<span class="value">”500″</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:height”</span> <span class="attribute">content</span>=<span class="value">”416″</span> /&gt;</span></div></pre></td></tr></table></figure>
+
+<p>另外meta还有其他的扩展标签，如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">"qc:admins"</span> <span class="attribute">content</span>=<span class="value">"77103107776553571676375"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--配置第三方QQ登录的验证码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">"wb:webmaster"</span> <span class="attribute">content</span>=<span class="value">"c4f857219bfae3cb"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--配置第三方Sina登录的验证码 --&gt;</span></div></pre></td></tr></table></figure>
+
+<h3 id="使用Open_Graph_Protocol应注意">使用Open Graph Protocol应注意</h3>
+<p>meta property=og代码的功能并不等同于网页的meta name标签，两者针对的对象不一致，功能不同。<br>如果网站上要使用Open Graph Protocol，那么，meta property=og和meta name、Title标签应同时赋值。<br>文章开头举例的B2C网站，<head>如下：</head></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">”Content-Type”</span> <span class="attribute">content</span>=<span class="value">”text</span>/<span class="attribute">html</span>;<span class="attribute">charset</span>=<span class="value">utf-8″</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>Cool Gadgets at the Right Price – Worldwide Free Shipping – ******<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:title”</span> <span class="attribute">content</span>=<span class="value">”**’sFacebook”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:type”</span> <span class="attribute">content</span>=<span class="value">”product”</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:url”</span> <span class="attribute">content</span>=<span class="value">”http:</span>//<span class="attribute">www.</span>******<span class="attribute">.com</span>” /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:image”</span> <span class="attribute">content</span>=<span class="value">”http:</span>//<span class="attribute">www.</span>******<span class="attribute">.com</span>/<span class="attribute">logo.gif</span>”/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:site_name”</span> <span class="attribute">content</span>=<span class="value">”******.com”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”og:description”</span> <span class="attribute">content</span>=<span class="value">”CoolGadgets</span> <span class="attribute">at</span> <span class="attribute">the</span> <span class="attribute">RightPrice</span> – <span class="attribute">Worldwide</span> <span class="attribute">Free</span> <span class="attribute">Shipping</span> – ******”/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”fb:admins”</span> <span class="attribute">content</span>=<span class="value">”100001422224225″</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">property</span>=<span class="value">”fb:page_id”</span> <span class="attribute">content</span>=<span class="value">”241333394220″</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">”Content-Type”</span> <span class="attribute">content</span>=<span class="value">”text</span>/<span class="attribute">html</span>;<span class="attribute">charset</span>=<span class="value">utf-8″</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”description”</span> <span class="attribute">content</span>=<span class="value">”Online</span> <span class="attribute">shopping</span> <span class="attribute">for</span> <span class="attribute">cool</span> <span class="attribute">gadgets</span> <span class="attribute">at</span> <span class="attribute">the</span> <span class="attribute">right</span> <span class="attribute">price.</span> ” /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”keywords”</span> <span class="attribute">content</span>=<span class="value">”cool</span> <span class="attribute">gadgets</span>, <span class="attribute">cheap</span> <span class="attribute">gadgets</span>, <span class="attribute">free</span> <span class="attribute">shipping</span>” /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="参考文章">参考文章</h2>
+<p><a href="http://segmentfault.com/blog/ciaocc/1190000002407912" target="_blank" rel="external">常用meta整理</a><br><a href="http://www.xuebuyuan.com/701946.html" target="_blank" rel="external">网页头部标签meta详解</a><br><a href="http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html" target="_blank" rel="external">在HTML中使用meta标签的基础知识和最佳实践</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Http/">Http</a><a href="/tags/meta/">meta</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://tphuang.github.io/2014/12/27/explain-http-meta/" data-title="网页头部标签meta详解 | Robin&#39;s Blog" data-tsina="1671515590" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/12/05/different-ebook-formats/"  title="mobi, azw, azw3, epub格式有什么区别">
+ <strong>下一篇：</strong><br/> 
+ <span>mobi, azw, azw3, epub格式有什么区别
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2014/12/27/explain-http-meta/" data-title="网页头部标签meta详解" data-url="http://tphuang.github.io/2014/12/27/explain-http-meta/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#meta的name属性"><span class="toc-number">1.</span> <span class="toc-text">meta的name属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Keywords(关键字)"><span class="toc-number">1.1.</span> <span class="toc-text">Keywords(关键字)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#description(网站内容描述)"><span class="toc-number">1.2.</span> <span class="toc-text">description(网站内容描述)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#robots(机器人向导)"><span class="toc-number">1.3.</span> <span class="toc-text">robots(机器人向导)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#author(作者)"><span class="toc-number">1.4.</span> <span class="toc-text">author(作者)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta的http-equiv"><span class="toc-number">2.</span> <span class="toc-text">meta的http-equiv</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Expires(期限)"><span class="toc-number">2.1.</span> <span class="toc-text">Expires(期限)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pragma(cache模式)"><span class="toc-number">2.2.</span> <span class="toc-text">Pragma(cache模式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Refresh(刷新)"><span class="toc-number">2.3.</span> <span class="toc-text">Refresh(刷新)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-Cookie(cookie设定)"><span class="toc-number">2.4.</span> <span class="toc-text">Set-Cookie(cookie设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Window-target(显示窗口的设定)"><span class="toc-number">2.5.</span> <span class="toc-text">Window-target(显示窗口的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content-Type(显示字符集的设定)"><span class="toc-number">2.6.</span> <span class="toc-text">content-Type(显示字符集的设定)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-Exit_/Page-Enter(进入页面、离开页面动画效果)"><span class="toc-number">2.7.</span> <span class="toc-text">Page-Exit /Page-Enter(进入页面、离开页面动画效果)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta扩展的标签"><span class="toc-number">3.</span> <span class="toc-text">meta扩展的标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Open_Graph_Protocol应注意"><span class="toc-number">3.1.</span> <span class="toc-text">使用Open Graph Protocol应注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">4.</span> <span class="toc-text">参考文章</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
+		
+			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+		
+			<li><a href="/categories/Web前端/" title="Web前端">Web前端<sup>1</sup></a></li>
+		
+			<li><a href="/categories/持续集成/" title="持续集成">持续集成<sup>3</sup></a></li>
+		
+			<li><a href="/categories/杂七杂八/" title="杂七杂八">杂七杂八<sup>1</sup></a></li>
+		
+			<li><a href="/categories/职业生涯/" title="职业生涯">职业生涯<sup>1</sup></a></li>
+		
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
+		
+			<li><a href="/tags/Integration/" title="Integration">Integration<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Maven/" title="Maven">Maven<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Cucumber/" title="Cucumber">Cucumber<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Spring/" title="Spring">Spring<sup>2</sup></a></li>
+		
+			<li><a href="/tags/ThoughtWorks/" title="ThoughtWorks">ThoughtWorks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/工作总结/" title="工作总结">工作总结<sup>1</sup></a></li>
+		
+			<li><a href="/tags/IoC/" title="IoC">IoC<sup>1</sup></a></li>
+		
+			<li><a href="/tags/DI/" title="DI">DI<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Gradle/" title="Gradle">Gradle<sup>1</sup></a></li>
+		
+			<li><a href="/tags/电子书/" title="电子书">电子书<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Http/" title="Http">Http<sup>1</sup></a></li>
+		
+			<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+		
+			<li><a href="/tags/meta/" title="meta">meta<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hibernate/" title="Hibernate">Hibernate<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ORM/" title="ORM">ORM<sup>0</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zipperary.com/" target="_blank" title="zippera">zippera</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1671515590&verifier=9b73b510&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Tingpeng. This is my blog on GitHub. <br/>
+			Try to do better.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/tphuang" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		<a href="https://www.linkedin.com/in/in/robinhuang1966" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/tphuang" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		
+		
+		<a href="mailto:robin.huang1966@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 
+		
+		<a href="http://tphuang.github.io/about" target="_blank" title="Robin">Robin</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tphuang"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+</html>
