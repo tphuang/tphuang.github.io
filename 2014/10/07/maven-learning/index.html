@@ -273,7 +273,7 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 </ul>
 <h3 id="POM">POM</h3>
 <p>一般，maven 的 archetype 插件建立了一个工程目录，其中有一个 Project Object Model(POM) 文件 pom.xml 。这个文件用于描述项目，配置插件和管理依赖关系。    </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">project</span>&gt;</span></div><div class="line">#该项目的坐标，其他项目可根据这个标识找到</div><div class="line"><span class="tag">&lt;<span class="title">groupId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">dependencies</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">dependency</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="title">version</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="title">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="title">scope</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;/<span class="title">dependency</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="title">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">build</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">plugins</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">plugin</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">           	<span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">           	<span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="title">plugin</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">build</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">project</span>&gt;</span></div><div class="line">#该项目的坐标，其他项目可根据这个标识找到</div><div class="line"><span class="tag">&lt;<span class="title">groupId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>bookshelf<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">dependencies</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">dependency</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="title">scope</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">build</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">plugins</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">plugin</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">plugin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">build</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">project</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <h3 id="Maven_插件">Maven 插件</h3>
 <p>当我们刚开始构建项目时，可以用<code>mvn archetype:generate</code> 命令来生成一个项目。那么这里的 <code>archetype:generate</code> 是什么意思呢？archetype 是一个插件的名字，generate是目标(goal)的名字。这个命令的意思是告诉 maven 执行 archetype 插件的 generate 目标。</p>
@@ -427,35 +427,33 @@ Maven是一个项目管理和构建的自动化工具，它包含了一个项目
 		
 			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
 		
-			<li><a href="/tags/Integration/" title="Integration">Integration<sup>2</sup></a></li>
+			<li><a href="/tags/Spring/" title="Spring">Spring<sup>2</sup></a></li>
 		
 			<li><a href="/tags/Maven/" title="Maven">Maven<sup>2</sup></a></li>
 		
+			<li><a href="/tags/Integration/" title="Integration">Integration<sup>2</sup></a></li>
+		
 			<li><a href="/tags/Cucumber/" title="Cucumber">Cucumber<sup>2</sup></a></li>
-		
-			<li><a href="/tags/Spring/" title="Spring">Spring<sup>2</sup></a></li>
-		
-			<li><a href="/tags/ThoughtWorks/" title="ThoughtWorks">ThoughtWorks<sup>1</sup></a></li>
-		
-			<li><a href="/tags/工作总结/" title="工作总结">工作总结<sup>1</sup></a></li>
-		
-			<li><a href="/tags/IoC/" title="IoC">IoC<sup>1</sup></a></li>
-		
-			<li><a href="/tags/DI/" title="DI">DI<sup>1</sup></a></li>
 		
 			<li><a href="/tags/Gradle/" title="Gradle">Gradle<sup>1</sup></a></li>
 		
-			<li><a href="/tags/电子书/" title="电子书">电子书<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Http/" title="Http">Http<sup>1</sup></a></li>
-		
-			<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
-		
 			<li><a href="/tags/meta/" title="meta">meta<sup>1</sup></a></li>
+		
+			<li><a href="/tags/IoC/" title="IoC">IoC<sup>1</sup></a></li>
 		
 			<li><a href="/tags/Hibernate/" title="Hibernate">Hibernate<sup>1</sup></a></li>
 		
-			<li><a href="/tags/ORM/" title="ORM">ORM<sup>0</sup></a></li>
+			<li><a href="/tags/工作总结/" title="工作总结">工作总结<sup>1</sup></a></li>
+		
+			<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+		
+			<li><a href="/tags/电子书/" title="电子书">电子书<sup>1</sup></a></li>
+		
+			<li><a href="/tags/DI/" title="DI">DI<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ThoughtWorks/" title="ThoughtWorks">ThoughtWorks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Http/" title="Http">Http<sup>1</sup></a></li>
 		
 		</ul>
 </div>
